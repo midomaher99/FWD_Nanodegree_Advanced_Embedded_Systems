@@ -10,8 +10,9 @@ int main()
 {
 	#include "MemoryMap.h"
 	#include "IntCtrl.h"
-
+	#include "SysCtrl.h"
 	IntCrtl_Init();
+	SysCtrl_Init();
 	while(1)
 	{
 			
