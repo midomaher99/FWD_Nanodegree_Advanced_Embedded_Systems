@@ -51,15 +51,15 @@ void IntCrtl_Init(void)
     	PRI_BitOffset = (((IRQNumber % 4) * 8) +5) ;
 			PRI_offset= IRQNumber / 4;
 		#if		(PRIGROUPING == xxx__)
-    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].groupPriority <<PRI_BitOffset);
+    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].groupPriority << (uint32)PRI_BitOffset);
 		#elif	(PRIGROUPING == xxy__)
-    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].groupPriority <<(PRI_BitOffset+1));
-    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].subGroupPriority <<PRI_BitOffset);
+    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].groupPriority << ((uint32)PRI_BitOffset+1));
+    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].subGroupPriority << (uint32)PRI_BitOffset);
     	#elif	(PRIGROUPING == xyy__)	
-			NVIC->PRI[PRI_offset] |= (NVIC_Cofig[i].groupPriority <<(PRI_BitOffset+2));
-			NVIC->PRI[PRI_offset] |= (NVIC_Cofig[i].subGroupPriority << PRI_BitOffset);
+			NVIC->PRI[PRI_offset] |= (NVIC_Cofig[i].groupPriority <<((uint32)PRI_BitOffset+2));
+			NVIC->PRI[PRI_offset] |= (NVIC_Cofig[i].subGroupPriority << (uint32)PRI_BitOffset);
    		#elif	(PRIGROUPING == yyy__)
-    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].subGroupPriority <<PRI_BitOffset);
+    		NVIC->PRI[IRQNumber / 4] |= (NVIC_Cofig[i].subGroupPriority << (uint32)PRI_BitOffset);
     	#endif
     }
 
@@ -68,7 +68,7 @@ void IntCrtl_Init(void)
     {
     	IRQNumber = NVIC_Cofig[i].vectorName;
     	EN_BitOffset = (IRQNumber %32) ;
-    	NVIC->EN[IRQNumber/32] |= (1u) << EN_BitOffset;
+    	NVIC->EN[IRQNumber/32] |= ((1u) << (uint32)EN_BitOffset);
     }
 }
 
