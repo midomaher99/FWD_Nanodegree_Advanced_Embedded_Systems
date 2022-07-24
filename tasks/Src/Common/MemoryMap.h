@@ -161,20 +161,20 @@ typedef struct
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 //private peripherals addresses
-#define CORTEXM4_CORE_PERIPHERALS_BASE              0xE000E000
-#define NVIC_OFFSET                                 0x100
-#define SCB_OFFSET                                  0xD00
+#define CORTEXM4_CORE_PERIPHERALS_BASE              0xE000E000u
+#define NVIC_OFFSET                                 0x100u
+#define SCB_OFFSET                                  0xD00u
 
 //GPIO APB Base addresses
-#define GPIOA_BASE									0x40004000
-#define GPIOB_BASE									0x40005000
-#define GPIOC_BASE									0x40006000
-#define GPIOD_BASE									0x40007000
-#define GPIOE_BASE									0x40024000
-#define GPIOF_BASE									0x40025000
+#define GPIOA_BASE									0x40004000u
+#define GPIOB_BASE									0x40005000u
+#define GPIOC_BASE									0x40006000u
+#define GPIOD_BASE									0x40007000u
+#define GPIOE_BASE									0x40024000u
+#define GPIOF_BASE									0x40025000u
 
 //SysCtrl Base addresses
-#define SysCtrl_BASE                               0x400FE000
+#define SysCtrl_BASE                               0x400FE000u
 
 //modules instances
 #define NVIC    ((NVIC_Type*)(CORTEXM4_CORE_PERIPHERALS_BASE+NVIC_OFFSET))
