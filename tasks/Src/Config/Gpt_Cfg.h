@@ -2,33 +2,32 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCrtl.h
- *       Module:  NVIC
+ *         File:  Gpt_Cfg.h
+ *       Module:  General Purpose Timers
  *
- *  Description:  header file for NVIC driver
- *
+ *  Description:  to use the General Purpose Timers drive you should configure the Timer configurations
+ *                from this file and the Gpt_Lcfg.c file
  *********************************************************************************************************************/
-#ifndef IntCrtl_H
-#define IntCrtl_H
+#ifndef GPT_CFG_H
+#define GPT_CFG_H
 
 /**********************************************************************************************************************
- *  GLOBAL FUNCTION PROTOTYPES
+ *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
-/******************************************************************************
- * \Syntax          : void IntCrtl_Init(void)
- * \Description     : initialize NVIC module to enable and prioritize the required interrupts
- *
- * \Sync\Async      : Synchronous
- * \Reentrancy      : Non Reentrant
- * \Parameters (in) : None
- * \Parameters (out): None
- * \Return value:   : None
- *******************************************************************************/
-extern void IntCrtl_Init(void);
+//set the number of required timers to use 
+//can take any value from 0 -> 12
 
-#endif /* IntCrtl_H */
+#define NUM_TIMERS_ACTIVATED (1u)
 
 /**********************************************************************************************************************
- *  END OF FILE: IntCrtl.h
+ *  GLOBAL DATA PROTOTYPES
+ *********************************************************************************************************************/
+
+extern Gpt_ConfigType gpt_config[NUM_TIMERS_ACTIVATED];
+
+#endif /* GPT_CFG_H */
+
+/**********************************************************************************************************************
+ *  END OF FILE: Std_Types.h
  *********************************************************************************************************************/

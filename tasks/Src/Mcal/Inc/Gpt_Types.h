@@ -2,35 +2,59 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  SysCtrl_Cfg.h
- *       Module:  System Control
+ *         File:  <Write File Name>
+ *       Module:  -
  *
- *  Description:  to use the system Control drive you should configure the clock gating from
- *      		  this file and the SysCtrl_Lcfg.c file    
- *  
+ *  Description:  types to be used in general purpose timers driver
+ *
  *********************************************************************************************************************/
-#ifndef SYSCTRL_CFG_H
-#define SYSCTRL_CFG_H
+#ifndef GPT_Types_H
+#define GPT_Types_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-#include "SysCtrl.h"
-#include "SysCtrl_Types.h"
+#include "PlatformTypes.h"
+
 /**********************************************************************************************************************
- *  GLOBAL CONSTANT MACROS
+ *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
-//can take any value from 0 -> 49 due to number of required peripheral to use
-#define NUM_PERIPHIRALS_ACTICATED   (2u)
+typedef enum
+{
+    Gpt_Timer0 = 0x40030000u,
+    Gpt_Timer1 = 0x40031000u,
+    Gpt_Timer2 = 0x40032000u,
+    Gpt_Timer3 = 0x40033000u,
+    Gpt_Timer4 = 0x40034000u,
+    Gpt_Timer5 = 0x40035000u,
+
+    Gpt_WTimer0 = 0x40036000u,
+    Gpt_WTimer1 = 0x40037000u,
+    Gpt_WTimer2 = 0x4004C000u,
+    Gpt_WTimer3 = 0x4004D000u,
+    Gpt_WTimer4 = 0x4004E000u,
+    Gpt_WTimer5 = 0x4004F000u
+} Gpt_ChannelType;
+
+typedef uint32 GPT_ValueType;
+
+typedef enum
+{
+    Gpt_OneShot = 1u,
+    Gpt_Periodic = 2u
+} Gpt_ModeType;
+
+typedef void (*Gpt_Notification)();
+
+typedef struct
+{
+    Gpt_ChannelType channelID;
+    Gpt_ModeType channelMode;
+
+} Gpt_ConfigType;
+
+#endif /* GPT_TYPES_H */
 
 /**********************************************************************************************************************
- *  GLOBAL DATA PROTOTYPES
- *********************************************************************************************************************/
-
-extern const SysCtrl_ConfigType SysCtrl_Config[NUM_PERIPHIRALS_ACTICATED];
- 
-#endif  /* SYSCTRL__CFG_H */
-
-/**********************************************************************************************************************
- *  END OF FILE: SysCtrl_Cfg.h
+ *  END OF FILE: Gpt_types.h
  *********************************************************************************************************************/

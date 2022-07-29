@@ -2,22 +2,23 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCrtl.h
- *       Module:  NVIC
+ *         File:  Port.h
+ *       Module:  GPIO
  *
- *  Description:  header file for NVIC driver
- *
+ *  Description:  header file for PORT driver 
+ *  
  *********************************************************************************************************************/
-#ifndef IntCrtl_H
-#define IntCrtl_H
-
+#ifndef PORT_H
+#define PORT_H
+ 
 /**********************************************************************************************************************
- *  GLOBAL FUNCTION PROTOTYPES
+ *  GLOBAL FUNCTION PROTOTYES
  *********************************************************************************************************************/
 
 /******************************************************************************
- * \Syntax          : void IntCrtl_Init(void)
- * \Description     : initialize NVIC module to enable and prioritize the required interrupts
+ * \Syntax          : void Port_Init()
+ * \Description     : configre the required I/O pins direction, alternate function, internal attach
+ *                    and the required driving output current
  *
  * \Sync\Async      : Synchronous
  * \Reentrancy      : Non Reentrant
@@ -25,10 +26,10 @@
  * \Parameters (out): None
  * \Return value:   : None
  *******************************************************************************/
-extern void IntCrtl_Init(void);
-
-#endif /* IntCrtl_H */
+extern void Port_Init(void);
+ 
+#endif  /* PORT_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: IntCrtl.h
+ *  END OF FILE: PORT.h
  *********************************************************************************************************************/

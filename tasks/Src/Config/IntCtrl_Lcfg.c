@@ -14,16 +14,19 @@
  *  INCLUDES
  *********************************************************************************************************************/
 #include "IntCtrl_Cfg.h"
-#include "IntCtrl.h"
+#include "IntCtrl_Types.h"
 
 /**********************************************************************************************************************
  *  GLOBAL DATA
  *********************************************************************************************************************/
+
+//configrations array
 const NVIC_ConfigType NVIC_Cofig[NUM_INT_ACTIVATED]=
 {
-		{NVIC_GPIO_PORT_A,			1u,	0u},
-		{NVIC_GPIO_PORT_F,			2u,	1u},
-		{NVIC_PWM_1_FAULT,			1u,	0u}
+	//Peripheral			group priority 	subgroup priority
+	{NVIC_GPIO_PORT_F,			0u,			0u},
+	{NVIC_16_32_TIMER_1_A,		1u,			0u}
+
 };
 /**********************************************************************************************************************
  *  END OF FILE: IntCtrl_Lcfg.c

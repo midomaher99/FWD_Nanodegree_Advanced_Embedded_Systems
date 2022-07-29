@@ -10,6 +10,9 @@
 #ifndef PLATFORM_TYPES_H
 #define PLATFORM_TYPES_H
 
+
+#define NULL 0x0
+
 /*--------------------------signed integers------------------------*/
     typedef char                            sint8;
     typedef short                           sint16;

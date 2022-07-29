@@ -2,35 +2,37 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  SysCtrl_Cfg.h
- *       Module:  System Control
+ *         File:  Port_cfg.h
+ *       Module:  GPIO Port
  *
- *  Description:  to use the system Control drive you should configure the clock gating from
- *      		  this file and the SysCtrl_Lcfg.c file    
+ *  Description:  to use the GPIO port drive you should configure the channel direction, function,
+ *                intrnal attach and output driving current from this file and the Port_Lcfg.c file    
  *  
  *********************************************************************************************************************/
-#ifndef SYSCTRL_CFG_H
-#define SYSCTRL_CFG_H
+#ifndef PORT_CFG_H
+#define PORT_CFG_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-#include "SysCtrl.h"
-#include "SysCtrl_Types.h"
+#include "Port_Types.h"
+
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
-//can take any value from 0 -> 49 due to number of required peripheral to use
-#define NUM_PERIPHIRALS_ACTICATED   (2u)
+//the number of required active pins can take any value from 0u -> 48u
+//check the available pins in your device
+#define NUM_PINS_ACTICATED  (3u)
+
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
-
-extern const SysCtrl_ConfigType SysCtrl_Config[NUM_PERIPHIRALS_ACTICATED];
+extern const Port_ConfigType Port_Config[NUM_PINS_ACTICATED];
  
-#endif  /* SYSCTRL__CFG_H */
+ 
+#endif  /* FILE_NAME_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: SysCtrl_Cfg.h
+ *  END OF FILE: Std_Types.h
  *********************************************************************************************************************/

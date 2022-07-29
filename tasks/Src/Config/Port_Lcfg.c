@@ -7,22 +7,22 @@
 /**********************************************************************************************************************
  *  INCLUDES
  *********************************************************************************************************************/
-#include "SysCtrl_Cfg.h"
-#include "SysCtrl_Types.h"
+#include "Port_Cfg.h"
+#include "Port_Types.h"
 
 /**********************************************************************************************************************
  *  GLOBAL DATA
  *********************************************************************************************************************/
 
 //configrations array
-const SysCtrl_ConfigType SysCtrl_Config[NUM_PERIPHIRALS_ACTICATED] =
+const Port_ConfigType Port_Config[NUM_PINS_ACTICATED]=
 {
-    // Peripheral to be enables
-    {SysCtrl_GPIOF_Enable},
-    {SysCtrl_16_32_Timer1_Enable}
-
+    //channek  directio     function      internal attach                 outut driving current
+    {Port_PF0, Port_INPUT,  Port_Digital, Port_PullDown,                  Port_OutputCurrentAsDefault},
+    {Port_PF4, Port_INPUT,  Port_Digital, Port_PullUp,                    Port_OutputCurrentAsDefault},
+    {Port_PF2, Port_OUTPUT, Port_Digital, Port_InternalAttachAsDefault,   Port_4ma}
 };
 
 /**********************************************************************************************************************
- *  END OF FILE: SysCtrl_Lcfg.c
+ *  END OF FILE: FileName.c
  *********************************************************************************************************************/
