@@ -176,7 +176,7 @@ typedef enum
     Port_PA6 = 0x40006u,
     Port_PA7 = 0x40007u,
 
-    Port_PB0 = 0x50000u,
+    Port_0PB = 0x50000u,
     Port_PB1 = 0x50001u,
     Port_PB2 = 0x50002u,
     Port_PB3 = 0x50002u,
