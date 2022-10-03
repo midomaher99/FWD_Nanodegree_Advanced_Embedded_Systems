@@ -82,7 +82,7 @@ Dio_PortLevelType Dio_ReadPort(Dio_PortType PortId)
  * \Parameters (out): None
  * \Return value:   : None
  *  *******************************************************************************/
-void Dio_WritePort(Dio_PortLevelType PortId, Dio_PortLevelType Level)
+void Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
 {
 
     GPIO(PortId)->GPIODATA[255] = Level;

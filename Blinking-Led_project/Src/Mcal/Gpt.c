@@ -57,6 +57,7 @@ void Gpt_Init()
             Timer(timerBase)->GPTMTAMR |= 1u << 1u;
             break;
         }
+		
     }
 }
 
@@ -134,6 +135,7 @@ void Gpt_EnableNotification(Gpt_ChannelType channelId, Gpt_Notification callback
     }
     //enable time out interrupt
     Timer(channelId)->GPTMIMR |= 1;
+		
 }
 /******************************************************************************
  * \Syntax          : void Gpt_DisableNotification(Gpt_ChannelType channelId, Gpt_Notification callbackPtr)
@@ -165,6 +167,7 @@ void TIMER1A_Handler(void)
         Timer1->GPTMICR |= 1 << 0;
         //jump to callback
         callback();
+	
     }
 }
 

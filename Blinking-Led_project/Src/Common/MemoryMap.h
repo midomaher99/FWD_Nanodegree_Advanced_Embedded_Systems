@@ -112,7 +112,7 @@ typedef struct
 } GPIO_Type;
 
 //___________________________________
-// NVIC registers
+// SysCtrl registers
 // ONLY required REGISTERES IS IMPLEMENTED
 typedef struct
 {
