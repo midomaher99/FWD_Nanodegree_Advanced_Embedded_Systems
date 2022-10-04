@@ -3034,7 +3034,7 @@ BaseType_t xTaskIncrementTick( void )
          * writer has not explicitly turned time slicing off. */
 				
 				
-        #if ( ( configUSE_PREEMPTION == 1 ) && ( configUSE_TIME_SLICING == 1 ) &&(configUSE_EDF_SCHEDULER ==0) )
+        #if ( ( configUSE_PREEMPTION == 1 ) && ( configUSE_TIME_SLICING == 1 ))
             {
                 if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ pxCurrentTCB->uxPriority ] ) ) > ( UBaseType_t ) 1 )
                 {
@@ -3045,17 +3045,7 @@ BaseType_t xTaskIncrementTick( void )
                     mtCOVERAGE_TEST_MARKER();
                 }
             }
-		    #elseif ( ( configUSE_PREEMPTION == 1 ) && ( configUSE_TIME_SLICING == 1 ) &&(configUSE_EDF_SCHEDULER ==1) )
-						{
-									if(&(xReadyTasksListEDF).xListEnd.pxNext->xItemValue == pxCurrentTCB->xStateListItem.xItemValue)
-									{
-											xSwitchRequired = pdTRUE;
-									}
-									else
-									{
-											mtCOVERAGE_TEST_MARKER();
-									}
-						}
+		   
         #endif /* ( ( configUSE_PREEMPTION == 1 ) && ( configUSE_TIME_SLICING == 1 ) ) */
 
         #if ( configUSE_TICK_HOOK == 1 )
